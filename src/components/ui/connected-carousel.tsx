@@ -316,7 +316,6 @@ export function ConnectedCarousel({
                 "overflow-visible rounded-[20px] border border-[#17343d]/10 bg-white shadow-[0_18px_50px_rgba(23,52,61,0.12)]",
                 active ? "z-20" : "z-10",
               )}
-              aria-hidden={!active}
             >
               {!active && (
                 <span
@@ -420,7 +419,7 @@ export function ConnectedCarousel({
                     <span
                       className="absolute inset-y-0 left-0 rounded-full bg-[#d66a2c]"
                       style={{
-                        width: reduceMotion || manualPause ? "100%" : `${progress}%`,
+                        width: reduceMotion ? "100%" : `${progress}%`,
                       }}
                     />
                   )}

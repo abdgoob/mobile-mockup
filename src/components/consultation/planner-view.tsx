@@ -369,7 +369,11 @@ export function PlannerView({
             <ArrowLeft className="size-4" aria-hidden="true" /> Back
           </Button>
           <Button type="button" onClick={step === 3 ? onSubmit : onContinue} className="h-[52px] flex-1 rounded-[11px] bg-[#d66a2c] px-4 text-base font-bold hover:bg-[#bd5722]">
-            {step === 3 ? "Request my free consultation" : "Continue"}
+            {step === 1
+              ? "Choose my preferences"
+              : step === 2
+                ? "Add my contact details"
+                : "Request my free consultation"}
             {step < 3 ? <ArrowRight className="ml-1 size-4" aria-hidden="true" /> : null}
           </Button>
         </div>

@@ -361,35 +361,14 @@ function CrowdCanvas({ active }: CrowdCanvasProps) {
 }
 
 export function HomeownerDemandSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [hasEntered, setHasEntered] = useState(false);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setHasEntered(true);
-      },
-      { rootMargin: "200px 0px", threshold: 0.08 },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="relative isolate overflow-hidden bg-[#edf0ea] py-16 sm:py-20 lg:py-24"
       aria-labelledby="homeowner-demand-heading"
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#17343d]/10 to-transparent" />
 
-      <div
-        className={`relative z-10 mx-auto max-w-[760px] px-5 text-center transition-[opacity,transform] duration-[220ms] ease-out ${hasEntered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
-      >
+      <div className="relative z-10 mx-auto max-w-[760px] px-5 text-center">
         <p className="text-xs font-extrabold tracking-[0.18em] text-[#b9531f] uppercase">
           Homes are different. So are window projects.
         </p>
@@ -418,7 +397,7 @@ export function HomeownerDemandSection() {
         </ul>
 
         <p className="mx-auto mt-7 max-w-xl border-t border-[#17343d]/10 pt-6 text-sm leading-6 font-semibold text-[#29464e]">
-          Good recommendations begin with listening. Your prioritiesnot a predetermined productshape the conversation.
+          Good recommendations begin with listening. Your priorities, not a predetermined product, shape the conversation.
         </p>
       </div>
 

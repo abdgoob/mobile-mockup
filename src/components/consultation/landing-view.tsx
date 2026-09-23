@@ -9,8 +9,9 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import SpecularButton from "@/components/ui/SpecularButton";
 import { TextHighlight } from "@/components/ui/text-highlight";
+import { CustomerStoriesSection } from "@/components/consultation/customer-stories-section";
 import {
   HomeownerDemandSection,
   ResponsivePeopleFooter,
@@ -53,7 +54,7 @@ export function LandingView({ onStart }: LandingViewProps) {
             aria-label={`Call McCann at ${phoneDisplay}`}
           >
             <Phone className="size-4 text-[#d66a2c]" aria-hidden="true" />
-            <span>Call</span>
+            <span>Call McCann</span>
           </a>
         </div>
       </header>
@@ -69,16 +70,33 @@ export function LandingView({ onStart }: LandingViewProps) {
                 Replacement windows designed around <TextHighlight color="#fde047">how you live</TextHighlight>.
               </h1>
               <p className="mt-5 max-w-lg text-[17px] leading-7 text-[#52666b]">
-                A better window project starts with the comfort, light, and function you want at home. Share what matters, and McCann can prepare guidance around your prioritiesnot a sales script.
+                A better window project starts with the comfort, light, and function you want at home. Share what matters, and McCann can prepare guidance around your priorities, not a sales script.
               </p>
-              <Button
+              <SpecularButton
                 onClick={onStart}
                 size="lg"
-                className="mt-7 h-[54px] w-full rounded-[11px] bg-[#d66a2c] px-5 text-base font-bold shadow-[0_10px_28px_rgba(179,79,30,0.22)] hover:bg-[#bd5722] sm:w-auto sm:min-w-64"
+                radius={12}
+                tint="#d66a2c"
+                tintOpacity={1}
+                blur={0}
+                textColor="#ffffff"
+                lineColor="#fff4ec"
+                baseColor="#8f3f19"
+                intensity={0.9}
+                shineSize={10}
+                shineFade={36}
+                thickness={1}
+                speed={0.25}
+                followMouse
+                proximity={220}
+                autoAnimate={false}
+                className="mt-7 min-h-[54px] w-full text-base font-bold focus-visible:outline-[#17343d] sm:w-auto sm:min-w-64"
               >
-                Build my project summary
-                <ArrowRight className="ml-1 size-4" aria-hidden="true" />
-              </Button>
+                <span className="inline-flex items-center gap-2">
+                  Start my free window plan
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </span>
+              </SpecularButton>
               <div className="mt-5 flex items-center gap-2 text-sm font-medium text-[#52666b]">
                 <ShieldCheck className="size-4 text-[#d66a2c]" aria-hidden="true" />
                 Built around McCann’s existing consultation process
@@ -183,10 +201,15 @@ export function LandingView({ onStart }: LandingViewProps) {
             </div>
             <div>
               <BrandLockup inverse />
-              <p className="text-balance mt-8 text-2xl leading-9 font-semibold tracking-[-0.02em]">
-                “Just nice people all around. They know their stuff, have several quality options to choose from, and didn’t pressure sell.”
+              <p className="mt-8 text-xs font-extrabold tracking-[0.18em] text-[#f2a06e] uppercase">
+                Why homeowners choose McCann
               </p>
-              <p className="mt-4 text-sm font-bold text-[#f2a06e]">Patricia S. · McCann customer</p>
+              <h2 className="mt-3 text-balance text-3xl leading-tight font-extrabold tracking-[-0.035em] sm:text-4xl">
+                Experience that keeps the project clear from start to finish.
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-7 text-white/70">
+                For more than 30 years, McCann has helped Chicagoland homeowners compare window options, understand the work, and move forward without pressure.
+              </p>
               <div className="mt-9 grid grid-cols-2 gap-3 border-t border-white/15 pt-7">
                 <div>
                   <p className="text-2xl font-extrabold">30+ years</p>
@@ -204,6 +227,8 @@ export function LandingView({ onStart }: LandingViewProps) {
 
         <HomeownerDemandSection />
 
+        <CustomerStoriesSection />
+
         <section className="px-5 py-16 text-center sm:py-20">
           <div className="mx-auto max-w-xl">
             <p className="text-xs font-extrabold tracking-[0.18em] text-[#b9531f] uppercase">Clarity before the consultation</p>
@@ -211,7 +236,7 @@ export function LandingView({ onStart }: LandingViewProps) {
               Clear priorities lead to more confident decisions.
             </h2>
             <p className="mt-4 text-base leading-7 text-[#66777c]">
-              Start with a clear picture of your rooms, concerns, and timing, then let McCann help you compare the options that genuinely fitwithout pressure or guesswork.
+              Start with a clear picture of your rooms, concerns, and timing, then let McCann help you compare the options that genuinely fit - without pressure or guesswork.
             </p>
             <p className="mt-5 text-sm font-semibold text-[#52666b]">
               Prefer to talk it through?{" "}

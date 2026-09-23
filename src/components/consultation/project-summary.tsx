@@ -83,10 +83,11 @@ export function ProjectSummary({ draft, onReset }: ProjectSummaryProps) {
         <div className="mt-7 grid gap-3 sm:grid-cols-2">
           <a
             href={phoneHref}
+            aria-label={`Call McCann at ${phoneDisplay}`}
             className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[11px] bg-[#d66a2c] px-4 text-base font-bold text-white outline-none transition hover:bg-[#bd5722] focus-visible:ring-3 focus-visible:ring-[#d66a2c]/30"
           >
             <Phone className="size-4" aria-hidden="true" />
-            Call {phoneDisplay}
+            Call McCann now
           </a>
           <Button
             type="button"
@@ -95,7 +96,7 @@ export function ProjectSummary({ draft, onReset }: ProjectSummaryProps) {
             className="h-[52px] rounded-[11px] border-[#cbd3d0] bg-white px-4 text-base font-bold text-[#29464e]"
           >
             <RefreshCcw className="size-4" aria-hidden="true" />
-            Plan another project
+            Start a new project plan
           </Button>
         </div>
       </main>
